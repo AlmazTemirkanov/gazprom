@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gazprom</title>
+
+</head>
+<body>
+
+<div class="container mb-3 mt-5">
+    <div id="app">
+        <button @click="mess3()" type="button" class="btn btn-outline-dark">Поиск по лицевому счету</button>
+        <button @click="mess1()" type="button" class="btn btn-outline-dark">Поиск по ФИО</button>
+        <button @click="mess2()" type="button" class="btn btn-outline-dark">Поиск по Улице</button>
+
+        <div class="container mb-3 mt-5" v-show ="status3">
+            <p class="font-weight-bold">Поиск по Лицевому счету: </p>
+            <form class="form-inline" method="get" action="/main">
+                <input class="form-control ml-2" type="text" name="filter" placeholder="№ счета" value="{{#filter}}{{filter}}{{/filter}}">
+            </form>
+
+        </div>
+
+        <div class="container mb-3 mt-5" v-show ="status1">
+            <p class="font-weight-bold">Поиск по ФИО: </p>
+            <form class="form-inline" method="get" action="/fio">
+                <input class="form-control ml-2" type="text" name="fio" placeholder="ФИО" value="{{#fio}}{{fio}}{{/fio}}">
+            </form>
+        </div>
+
+        <div class="container mb-3 mt-5" v-show ="status2">
+            <p class="font-weight-bold">Поиск по улице: </p>
+            <form class="form-inline" method="get" action="/street">
+                <input class="form-control ml-2" type="text" name="street" placeholder="Улица" value="{{#street}}{{street}}{{/street}}">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Привет, Vue!',
+            status3: true,
+            status1: false,
+            status2: false,
+        },
+
+        methods:{
+            mess1(){
+                this.status1 = true;
+                this.status2 = false;
+                this.status3 = false;
+            },
+            mess2(){
+                this.status2 = true;
+                this.status1 = false;
+                this.status3 = false;
+
+            },
+            mess3(){
+                this.status3 = true;
+                this.status1 = false;
+                this.status2 = false;
+
+
+            },
+        }
+    })
+</script>
+    <div class="container-md-5 ml-2 mr-2">
+    <table class="table table-sm" border="1" cellpadding="5">
+        <thead class="thead-dark">
+
+        <th scope="col">Лиц. счет</th>
+        <th scope="col">Абонент</th>
+        <th scope="col">Подразделение</th>
+        <th scope="col">Регион</th>
+        <th scope="col">Район</th>
+        <th scope="col">Нас. пункт</th>
+        <th scope="col">Улица</th>
+        <th scope="col">Дом</th>
+        <th scope="col">Квартира</th>
+        <th scope="col">Телефон</th>
+        <th scope="col">Моб.</th>
+        <th scope="col">Показания</th>
+        <th scope="col">Дата</th>
+        <th scope="col">Новые показания</th>
+        <th scope="col">Изменить показания</th>
+
+        </thead>
+        {{#messages}}
+            <div> <!-- -->
+                <tr class="table-primary">
+
+                    <td class="table-primary">{{#personalAccount}}{{personalAccount}}{{/personalAccount}}</td>
+                    <td>{{#customer}}{{customer}}{{/customer}}</td>
+                    <td>{{#division}}{{division}}{{/division}}</td>
+                    <td>{{#region}}{{region}}{{/region}}</td>
+                    <td>{{#district}}{{district}}{{/district}}</td>
+                    <td>{{#locality}}{{locality}}{{/locality}}</td>
+                    <td>{{#street}}{{street}}{{/street}}</td>
+                    <td>{{#house}}{{house}}{{/house}}</td>
+                    <td>{{#flat}}{{flat}}{{/flat}}</td>
+                    <td>{{#phone}}{{phone}}{{/phone}}</td>
+                    <td>{{#mobPhone}}{{mobPhone}}{{/mobPhone}}</td>
+                    <td>{{#gasReading}}{{gasReading}}{{/gasReading}}</td>
+                    <td>{{#gasReadingDate}}{{gasReadingDate}}{{/gasReadingDate}}</td>
+                    <td>{{#gasReadingNew}}{{gasReadingNew}}{{/gasReadingNew}}</td>
+                    <th><a href="/edit/{{id}}">Изменить</a></th>
+
+
+                </tr>
+            </div>
+        {{/messages}}
+    </table>
+
+</div>
+
+
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>

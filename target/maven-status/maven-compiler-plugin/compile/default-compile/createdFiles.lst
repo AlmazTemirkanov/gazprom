@@ -1,0 +1,4 @@
+com\gazprom\controller\GazpromController.class
+com\gazprom\repo\GazpromRepo.class
+com\gazprom\Application.class
+com\gazprom\domain\Gazprom.class

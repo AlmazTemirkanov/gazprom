@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="mx-auto" style="width: 1250px;">
+    <div class="input-group input-group m-5">
+
+        <form class="px-4 py-8 col-sm-5" action="/update" method="post">
+
+            <div class="form-group" >
+                <input type="hidden" class="form-control" value="{{#id}}{{id}}{{/id}}" name="id" >
+
+                <input type="hidden" class="form-control"  name="division" value="{{#division}}{{division}}{{/division}}">
+                <input type="hidden" class="form-control"  name="region" value="{{#region}}{{region}}{{/region}}">
+                <input type="hidden" class="form-control"  name="district" value="{{#district}}{{district}}{{/district}}">
+                <input type="hidden" class="form-control"  name="locality" value="{{#locality}}{{locality}}{{/locality}}">
+                <input type="hidden" class="form-control"  name="street" value="{{#street}}{{street}}{{/street}}">
+                <input type="hidden" class="form-control"  name="flat" value="{{#flat}}{{flat}}{{/flat}}">
+                <input type="hidden" class="form-control"  name="phone" value="{{#phone}}{{phone}}{{/phone}}">
+                <input type="hidden" class="form-control"  name="mobPhone" value="{{#mobPhone}}{{mobPhone}}{{/mobPhone}}">
+                <input type="hidden" class="form-control"  name="mobPhone" value="{{#mobPhone}}{{mobPhone}}{{/mobPhone}}">
+                <input type="hidden" class="form-control"  name="house" value="{{#house}}{{house}}{{/house}}">
+
+
+
+            <div class="form-group">
+                <label for="number">Лицевой счет: </label>
+                <label for="number"><b>{{#personalAccount}}{{personalAccount}}{{/personalAccount}}</b></label>
+                <input type="hidden" class="form-control"  name="personalAccount" value="{{#personalAccount}}{{personalAccount}}{{/personalAccount}}">
+            </div>
+
+            <div class="form-group">
+                <label for="text">ФИО Абонента: </label>
+                <label for="number"><b>{{#customer}}{{customer}}{{/customer}}</b></label>
+                <input type="hidden" class="form-control"  name="customer" value="{{#customer}}{{customer}}{{/customer}}">
+            </div>
+
+            <div class="form-group">
+                <label for="text">Показания на начало месяца: </label>
+                <label for="number"><b>{{#gasReading}}{{gasReading}}{{/gasReading}}</b></label>
+                <input type="hidden" class="form-control"  name="gasReading" value="{{#gasReading}}{{gasReading}}{{/gasReading}}">
+            </div>
+
+            <div class="form-group">
+                <label for="service">Дата показания: </label>
+                <input type="date" class="form-control" name="gasReadingDate">
+            </div>
+
+
+            <div class="form-group">
+                <label for="provider">Новые показания: </label>
+                <input type="text" class="form-control"  name="gasReadingNew">
+
+
+            </div>
+
+
+            <button type="submit" class="btn btn-dark ">Обновить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+
