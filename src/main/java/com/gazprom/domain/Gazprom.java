@@ -16,7 +16,7 @@ public class Gazprom {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "personal_account", length = 10)
+    @Column(name = "personal_account", length = 30)
     private String personalAccount;
 
     @Column(name = "customer", length = 50)
@@ -34,20 +34,20 @@ public class Gazprom {
     @Column(name = "locality", length = 30)
     private String locality;
 
-    @Column(name = "street", length = 30)
+    @Column(name = "street", length = 50)
     private String street;
 
-    @Column(name = "house", length = 5)
-    private Long house;
+    @Column(name = "house", length = 30)
+    private  String house;
 
-    @Column(name = "flat", length = 5)
-    private Long flat;
+    @Column(name = "flat", length = 30)
+    private String flat;
 
-    @Column(name = "phone", length = 30)
-    private Long phone;
+    @Column(name = "phone", length = 70)
+    private String phone;
 
-    @Column(name = "mob_phone", length = 30)
-    private Long mobPhone;
+    @Column(name = "mob_phone", length = 70)
+    private String mobPhone;
 
     @Column(name = "gas_reading", length = 30)
     private Long gasReading;
