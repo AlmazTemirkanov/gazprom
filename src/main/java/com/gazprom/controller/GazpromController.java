@@ -23,7 +23,7 @@ public class GazpromController {
     @GetMapping("{id}")
     public List<Gazprom> getId(@PathVariable Long id) {
 
-        return gazpromRepo.findById(id);
+        return (List<Gazprom>) gazpromRepo.findAll();
 
     }
 
@@ -31,7 +31,7 @@ public class GazpromController {
     @GetMapping("{id}/{id}")
     public List<Second> getId2(@PathVariable Long id) {
 
-        return secondRepo.findById(id);
+        return (List<Second>) secondRepo.findAll();
 
     }
 
