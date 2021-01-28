@@ -1,24 +1,62 @@
 package com.gazprom.controller;
 
-import com.gazprom.domain.Gazprom;
-import com.gazprom.repo.GazpromRepo;
+import com.gazprom.domain.*;
+import com.gazprom.repo.*;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
-@Controller
+@RestController
+@RequestMapping
 public class GazpromController {
 
-
     private GazpromRepo gazpromRepo;
+    private SecondRepo secondRepo;
+    private ThirdRepo thirdRepo;
+    private FourthRepo fourthRepo;
+    private FifthRepo fifthRepo;
 
+    @CrossOrigin
+    @GetMapping("{id}")
+    public List<Gazprom> getId(@PathVariable Long id) {
 
-    @GetMapping("/")
-    public String main(Model model){
+        return gazpromRepo.findById(id);
 
-        return "main";
+    }
+
+    @CrossOrigin
+    @GetMapping("{id}/{id}")
+    public List<Second> getId2(@PathVariable Long id) {
+
+        return secondRepo.findById(id);
+
+    }
+
+    @CrossOrigin
+    @GetMapping("{id}/{id}/{id}")
+    public List<Third> getId3(@PathVariable Long id) {
+
+        return thirdRepo.findById(id);
+
+    }
+
+    @CrossOrigin
+    @GetMapping("{id}/{id}/{id}/{id}")
+    public List<Fourth> getId1_4(@PathVariable Long id) {
+
+        return fourthRepo.findById(id);
+
+    }
+
+    @CrossOrigin
+    @GetMapping("{id}/{id}/{id}/{id}/{id}")
+    public List<Fifth> getId1_5(@PathVariable Long id) {
+
+        return fifthRepo.findById(id);
+
     }
 
     @GetMapping("/main")

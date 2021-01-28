@@ -13,6 +13,7 @@ public interface GazpromRepo extends CrudRepository<Gazprom, String> {
 
     List<Gazprom> findByStreetIgnoreCaseContaining(String street);
 
-    List<Gazprom> findById(Long id);
+
+   List<Gazprom> findById (Long id);
 }
 

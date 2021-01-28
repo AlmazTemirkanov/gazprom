@@ -1,4 +1,12 @@
-com\gazprom\controller\GazpromController.class
 com\gazprom\repo\GazpromRepo.class
-com\gazprom\Application.class
+com\gazprom\repo\FourthRepo.class
 com\gazprom\domain\Gazprom.class
+com\gazprom\domain\Second.class
+com\gazprom\controller\GazpromController.class
+com\gazprom\domain\Fourth.class
+com\gazprom\repo\FifthRepo.class
+com\gazprom\domain\Third.class
+com\gazprom\repo\SecondRepo.class
+com\gazprom\Application.class
+com\gazprom\repo\ThirdRepo.class
+com\gazprom\domain\Fifth.class
