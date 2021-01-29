@@ -20,6 +20,21 @@ public class Fifth {
     @Column(name = "personal_account")
     private String personalAccount;
 
+    @Column(name = "customer")
+    private String customer;
+
+    @Column(name = "division")
+    private String division;
+
+    @Column(name = "region")
+    private String region;
+
+    @Column(name = "district")
+    private String district;
+
+    @Column(name = "locality")
+    private String locality;
+
     @Column(name = "street")
     private String street;
 
@@ -36,11 +51,11 @@ public class Fifth {
     private String mobPhone;
 
     @Column(name = "gas_reading")
-    private Long gasReading;
+    private String gasReading;
 
     @Column(name = "reading_date")
     private String gasReadingDate;
 
     @Column(name = "gas_reading_new")
-    private Long gasReadingNew;
+    private String gasReadingNew;
 }

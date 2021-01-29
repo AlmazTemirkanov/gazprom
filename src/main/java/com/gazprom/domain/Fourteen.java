@@ -3,18 +3,17 @@ package com.gazprom.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "gazprom")
-public class Gazprom {
-
+@Table(name = "fourteen")
+public class Fourteen {
     @Id
-    @SequenceGenerator(name = "seq_GAZ", initialValue = 10000, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_GAZ")
+    @SequenceGenerator(name = "seq_GAZ14", initialValue = 10000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_GAZ14")
+
     @Column(name = "id", nullable = false)
-    private Long id;
+    private String id;
 
     @Column(name = "personal_account")
     private String personalAccount;
@@ -58,7 +57,5 @@ public class Gazprom {
     @Column(name = "gas_reading_new")
     private String gasReadingNew;
 
-    public Gazprom() {
 
-    }
 }
