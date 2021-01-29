@@ -16,47 +16,47 @@ public class Gazprom {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "personal_account")
+    @Column(name = "personal_account", length = 30)
     private String personalAccount;
 
-    @Column(name = "customer")
+    @Column(name = "customer", length = 50)
     private String customer;
 
-    @Column(name = "division")
+    @Column(name = "division", length = 50)
     private String division;
 
-    @Column(name = "region")
+    @Column(name = "region", length = 30)
     private String region;
 
-    @Column(name = "district")
+    @Column(name = "district", length = 30)
     private String district;
 
-    @Column(name = "locality")
+    @Column(name = "locality", length = 30)
     private String locality;
 
-    @Column(name = "street")
+    @Column(name = "street", length = 50)
     private String street;
 
-    @Column(name = "house")
+    @Column(name = "house", length = 30)
     private  String house;
 
-    @Column(name = "flat")
+    @Column(name = "flat", length = 30)
     private String flat;
 
-    @Column(name = "phone")
+    @Column(name = "phone", length = 70)
     private String phone;
 
-    @Column(name = "mob_phone")
+    @Column(name = "mob_phone", length = 70)
     private String mobPhone;
 
-    @Column(name = "gas_reading")
-    private String gasReading;
+    @Column(name = "gas_reading", length = 30)
+    private Long gasReading;
 
     @Column(name = "reading_date")
     private String gasReadingDate;
 
-    @Column(name = "gas_reading_new")
-    private String gasReadingNew;
+    @Column(name = "gas_reading_new", length = 30)
+    private Long gasReadingNew;
 
     public Gazprom() {
 

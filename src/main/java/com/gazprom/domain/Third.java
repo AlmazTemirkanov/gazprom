@@ -18,21 +18,6 @@ public class Third {
     @Column(name = "personal_account")
     private String personalAccount;
 
-    @Column(name = "customer")
-    private String customer;
-
-    @Column(name = "division")
-    private String division;
-
-    @Column(name = "region")
-    private String region;
-
-    @Column(name = "district")
-    private String district;
-
-    @Column(name = "locality")
-    private String locality;
-
     @Column(name = "street")
     private String street;
 
@@ -49,12 +34,12 @@ public class Third {
     private String mobPhone;
 
     @Column(name = "gas_reading")
-    private String gasReading;
+    private Long gasReading;
 
     @Column(name = "reading_date")
     private String gasReadingDate;
 
     @Column(name = "gas_reading_new")
-    private String gasReadingNew;
+    private Long gasReadingNew;
 
 }

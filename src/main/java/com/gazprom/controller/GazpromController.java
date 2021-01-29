@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -19,22 +18,13 @@ public class GazpromController {
     private ThirdRepo thirdRepo;
     private FourthRepo fourthRepo;
     private FifthRepo fifthRepo;
-    private SixRepo sixRepo;
-    private SevenRepo sevenRepo;
-    private EightRepo eightRepo;
-    private NineRepo nineRepo;
-    private TenRepo tenRepo;
-    private ElevenRepo elevenRepo;
-    private TwelveRepo twelveRepo;
-    private ThirteenRepo thirteenRepo;
-    private FourteenRepo fourteenRepo;
-    private FifteenRepo fifteenRepo;
 
     @CrossOrigin
     @GetMapping("{id}")
     public List<Gazprom> getId(@PathVariable Long id) {
 
-        return (List<Gazprom>) gazpromRepo.findAll();
+        return gazpromRepo.findById(id);
+
     }
 
     @CrossOrigin
@@ -56,76 +46,18 @@ public class GazpromController {
     @CrossOrigin
     @GetMapping("{id}/{id}/{id}/{id}")
     public List<Fourth> getId1_4(@PathVariable Long id) {
+
         return fourthRepo.findById(id);
+
     }
 
     @CrossOrigin
     @GetMapping("{id}/{id}/{id}/{id}/{id}")
     public List<Fifth> getId1_5(@PathVariable Long id) {
+
         return fifthRepo.findById(id);
+
     }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Six> getId1_6(@PathVariable Long id) {
-        return sixRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Seven> getId1_7(@PathVariable Long id) {
-        return sevenRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Eight> getId1_8(@PathVariable Long id) {
-        return eightRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Nine> getId1_9(@PathVariable Long id) {
-        return nineRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Ten> getId1_10(@PathVariable Long id) {
-        return tenRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Eleven> getId1_11(@PathVariable Long id) {
-        return elevenRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Twelve> getId1_12(@PathVariable Long id) {
-        return twelveRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Thirteen> getId1_13(@PathVariable Long id) {
-        return thirteenRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public Optional<Fourteen> getId1_14(@PathVariable String id) {
-        return fourteenRepo.findById(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}/{id}")
-    public List<Fifteen> getId1_15(@PathVariable Long id) {
-        return fifteenRepo.findById(id);
-    }
-
-
 
     @GetMapping("/main")
     public String map (@RequestParam(required = false) String filter, Model model) {
