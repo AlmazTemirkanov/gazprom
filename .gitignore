@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.gitignore
+.idea/dataSources/
+src/main/java/com/gazprom/Gazprom.java
+src/main/java/com/gazprom/sweatter/
+target/classes/com/gazprom/Gazprom.class
+target/classes/com/gazprom/gazprom/
+target/generated-sources/
